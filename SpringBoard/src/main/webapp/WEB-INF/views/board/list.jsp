@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,12 +26,14 @@
 				<td>${list.subject}</td>
 				<td>${list.content}</td>
 				<td>${list.name}</td>
-				<td>${list.reg_date}</td>
+				<fmt:parseDate value="${list.reg_date}" var="dateValue" pattern="yyyyMMddHHmmss" />
+				<td><fmt:formatDate value="${dateValue}" pattern="yyyy-MM-dd"/></td>
 				<td>${list.readCount}</td>
 			</tr>
 		</c:forEach>
 	</tbody>
 </table>
+<button type="button" onclick="location.href='/board/regiView'">글쓰기</button>
 
 </body>
 </html>

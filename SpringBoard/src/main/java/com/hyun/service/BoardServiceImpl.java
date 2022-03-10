@@ -19,4 +19,16 @@ public class BoardServiceImpl implements BoardService{
 		return dao.list();
 	}
 	
+	@Override
+	public int regi(BoardDTO dto) throws Exception {
+		
+		if(dao.getMaxSeq() == null) {
+			dto.setSeq(1);
+		} else {
+			dto.setSeq(dao.getMaxSeq() + 1);
+		}
+		
+		return dao.regi(dto);
+	}
+	
 }

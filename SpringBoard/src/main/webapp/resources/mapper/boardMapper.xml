@@ -11,4 +11,29 @@
  			BOARD
 	</select>
 
+	<select id="maxSeq" resultType="java.lang.Integer">
+		select max(SEQ) from board
+	</select>
+	
+	<insert id="regi">
+		INSERT INTO BOARD (
+			SEQ,
+			SUBJECT,
+			CONTENT,
+			NAME,
+			REG_DATE,
+			READCOUNT
+		)
+		VALUES (
+			#{seq},
+			#{subject},
+			#{content},
+			#{name},
+			#{reg_date},
+			0
+		)
+		
+		
+	</insert>
+
 </mapper>

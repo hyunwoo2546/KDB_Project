@@ -21,4 +21,14 @@ public class BoardDAOImpl implements BoardDAO{
 		return sqlSession.selectList(namespace + ".list");
 	}
 	
+	@Override
+	public Integer getMaxSeq(){
+		return sqlSession.selectOne(namespace+ ".maxSeq");
+	}
+	
+	@Override
+	public int regi(BoardDTO dto) {
+		return sqlSession.insert(namespace+".regi",dto);
+	}
+	
 }
