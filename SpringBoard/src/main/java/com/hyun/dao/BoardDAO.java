@@ -12,4 +12,8 @@ public interface BoardDAO {
 	
 	public int regi(BoardDTO dto);
 	
+	public BoardDTO view(int seq) throws Exception;
+	
+	public void updateReadCount(int seq) throws Exception;
+	
 }

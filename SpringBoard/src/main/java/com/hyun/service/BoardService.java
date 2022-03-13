@@ -10,4 +10,6 @@ public interface BoardService {
 	
 	public int regi(BoardDTO dto) throws Exception;
 	
+	public BoardDTO view(int seq) throws Exception;
+	
 }

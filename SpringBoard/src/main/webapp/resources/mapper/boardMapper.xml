@@ -32,8 +32,27 @@
 			#{reg_date},
 			0
 		)
-		
-		
 	</insert>
-
+	
+	<select id="view" resultType="com.hyun.domain.BoardDTO">
+		SELECT
+			SEQ,
+			SUBJECT,
+			CONTENT,
+			NAME,
+			REG_DATE,
+			READCOUNT
+		FROM
+			BOARD
+		WHERE
+			SEQ = #{seq}
+	</select>
+	
+	<update id="updateReadCount">
+		UPDATE BOARD
+		SET
+			READCOUNT = READCOUNT + 1
+		WHERE 
+			SEQ = #{seq}
+	</update>
 </mapper>
