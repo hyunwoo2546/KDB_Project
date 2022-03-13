@@ -6,9 +6,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path}/resources/css/test.css">
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="${path}/resources/js/board.js"></script>
+<script type="text/javascript">
+	function fn_goView(seq){
+		$("#seq").val(seq);
+	
+		var f = $("#frm");
+		f.attr("action", "/board/view");
+		f.attr("method", "POST");
+		f.submit();
+	};
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -29,7 +37,7 @@
 			<c:forEach items="${list}" var="list">
 	 			<tr>
 	 			 	 <td>${list.seq}</td>
-	 			 	 <td><a onclick="location.href='/board/view'">${list.subject}</a></td>
+	  				 <td><a href="#" onclick="fn_goView(${list.seq})">${list.subject}</a></td>
 					 <td>${list.content}</td>
 	 				 <td>${list.name}</td>
 	 				 <fmt:parseDate value="${list.reg_date}" var="dateValue" pattern="yyyyMMddHHmmss"/> 

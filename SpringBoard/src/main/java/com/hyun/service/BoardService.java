@@ -12,4 +12,8 @@ public interface BoardService {
 	
 	public BoardDTO view(int seq) throws Exception;
 	
+	public int update(BoardDTO dto) throws Exception;
+	
+	public int delete(int seq) throws Exception;
+	
 }

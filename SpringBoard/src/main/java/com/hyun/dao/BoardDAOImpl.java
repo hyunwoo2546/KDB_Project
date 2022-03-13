@@ -38,7 +38,17 @@ public class BoardDAOImpl implements BoardDAO{
 	
 	@Override
 	public void updateReadCount(int seq) throws Exception {
-		sqlSession.update(namespace + "updateReadCount",seq);
+		sqlSession.update(namespace + ".updateReadCount",seq);
+	}
+	
+	@Override
+	public int update(BoardDTO dto) throws Exception {
+		return sqlSession.update(namespace+".update",dto);
+	}
+	
+	@Override
+	public int delete(int seq) throws Exception {
+		return sqlSession.delete(namespace+".delete",seq);
 	}
 	
 }

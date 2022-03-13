@@ -34,7 +34,17 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardDTO view(int seq) throws Exception {
 		dao.updateReadCount(seq);
-		return null;
+		return dao.view(seq);
+	}
+	
+	@Override
+	public int update(BoardDTO dto) throws Exception {
+		return dao.update(dto);
+	}
+	
+	@Override
+	public int delete(int seq) throws Exception {
+		return dao.delete(seq);
 	}
 	
 }

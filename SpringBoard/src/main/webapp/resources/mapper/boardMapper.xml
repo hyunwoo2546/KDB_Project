@@ -55,4 +55,19 @@
 		WHERE 
 			SEQ = #{seq}
 	</update>
+	
+	<update id="update">
+		UPDATE BOARD
+		SET
+			SUBJECT = #{subject},
+			CONTENT = #{content}
+		WHERE
+			SEQ = #{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM BOARD
+		WHERE
+			SEQ = #{seq}
+	</delete>
 </mapper>

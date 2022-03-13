@@ -1,8 +1,5 @@
-/**
- * 
- */
- 
- function fn_boardRegi(){
+/*# 글 등록*/
+function fn_boardRegi(){
 	var data = $("#frm").serialize();
 	
 	$.ajax({
@@ -16,23 +13,6 @@
 			}
 		},
 		error: function(data){
-			alert("실패");
-			console.log(data);
-		}
-	});
-};
-
- function fn_goView() {
-	var data = $("#frm").serialize();
-	
-	$.ajax({
-		type : "POST",
-		url : "board/view",
-		data : data,
-		success : function(data) {
-			alert('글 조회 페이지 이동');
-		},
-		error : function(data) {
 			alert("실패");
 			console.log(data);
 		}
