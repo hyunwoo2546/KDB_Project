@@ -12,8 +12,8 @@
 <a href = "/board/list">게시판 이동</a>
 
 <P>  The time on the server is ${serverTime}. </P>
-<h2>3월 10일 깃허브 커밋</h2>
-<h2>3월 14일 깃허브 커밋</h2>
-<h2>3월 17일 깃허브 커밋</h2>
+<h2>3월 10일 깃허브 커밋 </h2>
+<h2>3월 14일 깃허브 커밋 </h2>
+<h2>3월 17일 깃허브 커밋 </h2>
 </body>
 </html>
